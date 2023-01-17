@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
 // 만약 프로젝트 시 어떤 기능이 있을지 모를때 = CRUD
 @Mapper
 public interface UserRepository { // CRUD
-    public User login(String username, String password);
+    public int insert(String username, String password, String email);
 
     public List<User> findAll();
 

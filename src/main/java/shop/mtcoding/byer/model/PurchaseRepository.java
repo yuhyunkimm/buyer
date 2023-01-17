@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface PurchaseRepository {
-    public User login(int userId, int productId);
+    public int insert(int userId, int productId);
 
     public List<Purchase> findAll();
 
