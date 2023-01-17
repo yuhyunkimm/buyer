@@ -13,5 +13,4 @@ insert into purchase_tb(user_id, product_id, created_at) values(2, 2, now());
 insert into purchase_tb(user_id, product_id, created_at) values(3, 1, now());
 insert into purchase_tb(user_id, product_id, created_at) values(3, 2, now());
 
-
 commit;
