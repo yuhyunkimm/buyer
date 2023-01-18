@@ -9,7 +9,7 @@
    </select>
    
    <select id="findById" resultType="shop.mtcoding.byer.model.Product">
-      select * from Product_tb
+      select * from Product_tb where id = #{id}
    </select>
 
    <insert id="insert">
@@ -23,4 +23,9 @@
    <update id ="updateById">
       update Product_tb set name = #{name}, price = #{price}, qty = #{qty} where id = #{id}
    </update>
+
+   <update id ="update">
+      update Product_tb set qty = #{qty} where id = #{id}
+   </update>
+   
 </mapper>
