@@ -5,7 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 import shop.mtcoding.byer.model.User;
 import shop.mtcoding.byer.model.UserRepository;
@@ -18,6 +21,12 @@ public class UserController {
 
     @Autowired
     private HttpSession session;
+
+    @GetMapping("/list")
+    public String list() {
+        return "product/list";
+
+    }
 
     @GetMapping("/loginForm")
     public String loginForm() {
@@ -40,8 +49,8 @@ public class UserController {
         return "user/joinForm";
     }
 
-    @PostMapping("/loginForm")
-    public String loginForm(String username, String password, String email) {
+    @PostMapping("/join")
+    public String join(String username, String password, String email) {
         int result = userRepository.insert(username, password, email);
         if (result == 1) {
             return "redirect:/loginForm";

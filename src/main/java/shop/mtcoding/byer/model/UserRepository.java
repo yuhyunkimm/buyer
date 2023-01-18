@@ -11,7 +11,8 @@ import org.apache.ibatis.annotations.Param;
 // 만약 프로젝트 시 어떤 기능이 있을지 모를때 = CRUD
 @Mapper
 public interface UserRepository { // CRUD
-    public int insert(@Param("name") String username, @Param("password") String password, @Param("email") String email);
+    public int insert(@Param("username") String username, @Param("password") String password,
+            @Param("email") String email);
 
     public List<User> findAll();
 

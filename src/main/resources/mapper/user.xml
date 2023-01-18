@@ -5,7 +5,7 @@
 
 <mapper namespace="shop.mtcoding.byer.model.UserRepository">
    <select id="findByUsernameAndPassword" resultType="shop.mtcoding.byer.model.User">
-      select * from user_tb where username = #{username} password = #{password}
+      select * from user_tb where username = #{username} and password = #{password}
    </select>
    
    <select id="findById" resultType="shop.mtcoding.byer.model.User">
@@ -23,9 +23,5 @@
    <update id ="updateById">
       update user_tb set password = #{password} where id = #{id}
    </update>
-
-    <sql id="findByUsernameAndPassword">
-          
-    </sql>
 
 </mapper>
