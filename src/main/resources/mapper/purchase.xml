@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mtcoding.byer.model.PurchaseRepository">
+   <select id="findAll" resultType="shop.mtcoding.byer.model.Purchase">
+      select * from Purchase_tb
+   </select>
+   
+   <select id="findById" resultType="shop.mtcoding.byer.model.Purchase">
+      select * from Purchase_tb
+   </select>
+
+   <insert id="insert">
+      insert into Purchase_tb(name, price, qty, created_at) values(#{name}, #{price}, #{qty}, now())
+   </insert>
+
+   <delete id="deleteById">
+      delete from Purchase_tb where id = #{id}
+   </delete>
+
+   <update id ="updateById">
+      update Purchase_tb set name = #{name} price = #{price} qty = #{qty} where id = #{id}
+   </update>
+</mapper>
