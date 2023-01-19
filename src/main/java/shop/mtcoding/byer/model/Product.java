@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import lombok.Getter;
 import lombok.Setter;
+import shop.mtcoding.byer.util.DataUtil;
 
 @Getter
 @Setter
@@ -13,4 +14,8 @@ public class Product {
     private int price;
     private int qty;
     private Timestamp createdAt;
+
+    public String getCreatedAtString() {
+        return DataUtil.format(createdAt);
+    }
 }
