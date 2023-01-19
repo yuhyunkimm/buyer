@@ -15,7 +15,7 @@ public class Product {
     private int qty;
     private Timestamp createdAt;
 
-    public String getCreatedAtString() {
+    public String getCreatedAtToString() {
         return DataUtil.format(createdAt);
     }
 }
