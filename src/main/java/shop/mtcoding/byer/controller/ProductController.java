@@ -26,10 +26,14 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}")
-    public String findById(Model model, @PathVariable int id) {
+    public String detail(Model model, @PathVariable int id) {
         Product product = productRepository.findById(id);
-        model.addAttribute("product", product);
-        return "product/detail";
+        if (product == null) {
+            return "redirect:/notfound";
+        } else {
+            model.addAttribute("product", product);
+            return "product/detail";
+        }
     }
 
     @PostMapping("/product/{id}/update")

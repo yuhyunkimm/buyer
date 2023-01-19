@@ -17,7 +17,7 @@
                 <td>${product.name}</td>
                 <td>${product.price}</td>
                 <td>${product.qty}</td>
-                <td>${product.createdAt}</td>
+                <td>${product.CreatedAtToString}</td>
             </tr>
         </table>
         <div class="flex_box">
