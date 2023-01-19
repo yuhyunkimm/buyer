@@ -34,6 +34,7 @@ public class ProductController {
 
     @PostMapping("/product/{id}/update")
     public String update(@PathVariable int id, int qty) {
+
         Product product = productRepository.findById(id);
         int productQty = product.getQty() - qty;
         int rerult = productRepository.update(id, productQty);
