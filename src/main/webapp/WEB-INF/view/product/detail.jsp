@@ -20,10 +20,13 @@
                 <td>${product.CreatedAtToString}</td>
             </tr>
         </table>
-        <div class="flex_box">
-            <form action="/product/${product.id}/update" method="post">
-                <input type="number" name="qty" min="1" placeholder="Input number">
-                <button type="submit">구매</button>
-            </form>
-        </div>
+        <form action="/purchase/insert${product.id}/update" method="post">
+            <input type="hidden" name="productId" value="${product.id}">
+            <select name="count">
+                <c:forEach begin="1" end="${product.qty}" var="num">
+                    <option value="${num}">${num}</option>
+                </c:forEach>
+            </select>
+            <button type="submit">구매</button>
+        </form>
         <%@ include file="../layout/footer.jsp" %>
