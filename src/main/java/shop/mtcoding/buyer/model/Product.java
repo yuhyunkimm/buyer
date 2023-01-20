@@ -16,7 +16,7 @@ public class Product {
     private Timestamp createdAt;
 
     // createdAtString
-    public String getCreatedAtString() {
+    public String getCreatedAtToString() {
         return DataUtil.format(createdAt);
 
     }
